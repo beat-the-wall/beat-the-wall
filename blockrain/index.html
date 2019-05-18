@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+
+  <title>Blockrain.js - A Tetris game in HTML5 + Javascript (with autoplay!)</title>
+
+  <meta name="description" content="Blockrain.js lets you embed the classic Tetris game on your website" />
+  <meta name="keywords" content="js, jquery, game, plugin, html5, tetris" />
+  <meta name="robots" content="INDEX, FOLLOW" />
+  <meta name="author" content="Aerolab" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+  <link rel="shortcut icon" href="assets/images/favicon.png">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="src/blockrain.css">
+
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    #examples {
+      height: 100vh;
+      width: 100vw;
+
+      padding: 0;
+    }
+
+    #example-slider {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      max-width: none;
+
+      margin: 0;
+      border: none;
+      border-radius: unset;
+    }
+
+    .example {
+      padding: 0;
+      display: flex;
+      height: 100%;
+
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .example .instructions {
+      position: static;
+      width: 118px;
+      display: inline-block;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    .example .game {
+      margin: 0;
+      height: 80%;
+      position: inherit;
+      flex-grow: 1;
+      padding-right: 10px;
+    }
+  </style>
+
+</head>
+<body>
+
+<section id="examples">
+  <article id="example-slider">
+    <div class="example">
+      <div class="instructions">
+        Use only arrows
+        <div class="keyboard">
+          <div class="key key-up"></div>
+          <div class="key key-left"></div>
+          <div class="key key-down"></div>
+          <div class="key key-right"></div>
+        </div>
+      </div>
+      <div class="game" id="tetris-demo"></div>
+    </div>
+  </article>
+
+</section>
+
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="src/blockrain.jquery.libs.js"></script>
+<script src="src/blockrain.jquery.src.js"></script>
+<script src="src/blockrain.jquery.themes.js"></script>
+
+<script>
+  $('#tetris-demo').blockrain({
+    speed: 20,
+    theme: 'candy',
+    showFieldOnStart: true,
+    autoBlockWidth: true
+  });
+</script>
+
+</body>
+</html>
